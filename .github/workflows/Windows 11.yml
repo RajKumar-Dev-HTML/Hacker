@@ -1,0 +1,33 @@
+name: Windows 11
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: Paste Powershell Code
+        required: true
+
+jobs:
+  build:
+    name: Using PowerShell
+    runs-on: windows-latest
+    timeout-minutes: 999999
+
+    steps:
+    - name: Downloading DirectX & Chrome & Remote Desktop Host
+      run: |
+        # WAIT FOR 1-2 MINUTES 
+        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/971e599923e07d0a41bbf7a680f050e963fd39d6/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
+    - name: Starting Windows 11
+      run: |
+        # CONNECTING WITH Windows 11...
+        ${{ inputs.code }} -pin=159357
+    - name: Windows is Online...
+      run: |
+        # Go And Connect Now!
+        $i = 999999
+         do {
+             Write-Host $i
+             Sleep 60
+             $i--
+        } while ($i -gt 0)
