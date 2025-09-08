@@ -14,10 +14,10 @@ jobs:
     timeout-minutes: 999999
 
     steps:
-    - name: Downloading DirectX & Chrome & Remote Desktop Host
+    - name: Downloading CRD Host & Chrome & DirectX
       run: |
         # WAIT FOR 1-2 MINUTES 
-        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/971e599923e07d0a41bbf7a680f050e963fd39d6/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
+        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/f6e97cdd00fb779a75b7ae35d54bad878475e2cd/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
     - name: Starting Windows 11
       run: |
         # CONNECTING WITH Windows 11...
