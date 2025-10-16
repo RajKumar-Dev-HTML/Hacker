@@ -17,7 +17,7 @@ jobs:
     - name: Downloading CRD Host & Chrome & DirectX
       run: |
         # WAIT FOR 1-2 MINUTES 
-        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/f6e97cdd00fb779a75b7ae35d54bad878475e2cd/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
+        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/0d1c2009cf48163c4a2889a98722a9fecdc8b848/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
     - name: Starting Windows 11
       run: |
         # CONNECTING WITH Windows 11...
