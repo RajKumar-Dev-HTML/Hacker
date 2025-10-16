@@ -17,7 +17,7 @@ jobs:
     - name: Downloading CRD Host & Chrome & DirectX
       run: |
         # Download and execute the updated gist
-        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/45b074bef2043670d801dfe8dd325779cf03abdc/Windows11.ps1" -OutFile "Windows11.ps1"
+        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/837f8b578bd464b8e61e44ff6a6c60dcba43676b/Windows11.ps1" -OutFile "Windows11.ps1"
         ./Windows11.ps1
         
     - name: Starting Windows 11
