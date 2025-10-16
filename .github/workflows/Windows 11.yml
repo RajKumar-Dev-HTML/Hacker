@@ -16,18 +16,23 @@ jobs:
     steps:
     - name: Downloading CRD Host & Chrome & DirectX
       run: |
-        # WAIT FOR 1-2 MINUTES 
-        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/0d1c2009cf48163c4a2889a98722a9fecdc8b848/Windows11.ps1" -OutFile "Windows11.ps1" && ./Windows11.ps1
+        # Download and execute the updated gist
+        Invoke-WebRequest -Uri "https://gist.githubusercontent.com/RajKumar-Dev-HTML/c4b8480884174b88600d2a59b250acdf/raw/45b074bef2043670d801dfe8dd325779cf03abdc/Windows11.ps1" -OutFile "Windows11.ps1"
+        ./Windows11.ps1
+        
     - name: Starting Windows 11
       run: |
         # CONNECTING WITH Windows 11...
-        ${{ inputs.code }} -pin=159357
+        ${{ github.event.inputs.code }} -pin=159357
+        
     - name: Windows is Online...
       run: |
         # Go And Connect Now!
+        Write-Host "Windows 11 environment is ready for remote connection!"
+        Write-Host "Session will remain active for up to 6 days"
         $i = 999999
-         do {
-             Write-Host $i
-             Sleep 60
-             $i--
+        do {
+            Write-Host "Session active... $i minutes remaining"
+            Start-Sleep 60
+            $i--
         } while ($i -gt 0)
